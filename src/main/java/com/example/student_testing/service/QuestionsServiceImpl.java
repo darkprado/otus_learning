@@ -20,7 +20,7 @@ public class QuestionsServiceImpl implements QuestionsService {
 
     private String fileName;
 
-    public void setFileName(String fileName) {
+    public QuestionsServiceImpl(String fileName) {
         this.fileName = fileName;
     }
 
