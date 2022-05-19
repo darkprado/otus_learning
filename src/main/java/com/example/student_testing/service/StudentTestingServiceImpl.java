@@ -2,16 +2,21 @@ package com.example.student_testing.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.example.student_testing.dto.QuestionDto;
 
 /**
  * @author s.melekhin
  * @since 12 май 2022 г.
  */
+@Service
 public class StudentTestingServiceImpl implements StudentTestingService {
 
     private final QuestionsService qService;
 
+    @Autowired
     public StudentTestingServiceImpl(QuestionsService qService) {
         this.qService = qService;
     }

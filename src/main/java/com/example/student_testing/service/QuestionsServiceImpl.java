@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import com.example.student_testing.dto.QuestionDto;
 
@@ -16,13 +18,11 @@ import com.example.student_testing.dto.QuestionDto;
  * @author s.melekhin
  * @since 12 май 2022 г.
  */
+@Service
 public class QuestionsServiceImpl implements QuestionsService {
 
+    @Value("${file.fileName}")
     private String fileName;
-
-    public QuestionsServiceImpl(String fileName) {
-        this.fileName = fileName;
-    }
 
     @Override
     public List<QuestionDto> getQuestionsFromCSV() {
